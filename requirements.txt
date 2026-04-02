@@ -1,4 +1,5 @@
 flask
 openai-whisper
-transformers
+deep-translator
 torch
+ffmpeg-python
