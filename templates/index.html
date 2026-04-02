@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meeting Audio Extractor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🎙️ Meeting Audio Extractor</h1>
+
+    <!-- Upload -->
+    <div class="card">
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="audio" required>
+            <button type="submit">Upload & Process</button>
+        </form>
+    </div>
+
+    <!-- English Transcript -->
+    {% if transcript %}
+    <div class="card">
+        <h2>📝 English Transcript</h2>
+        <p>{{ transcript }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Hindi Translation -->
+    {% if hindi_text %}
+    <div class="card">
+        <h2>🇮🇳 Hindi Translation</h2>
+        <p>{{ hindi_text }}</p>
+    </div>
+    {% endif %}
+
+    <!-- Conversation -->
+    {% if conversation %}
+    <div class="card">
+        <h2>👥 Conversation</h2>
+        <ul>
+            {% for line in conversation %}
+                <li>{{ line }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
